@@ -1,7 +1,7 @@
 <h1 align="center">Hola 👋, Soy Carlos Patitucci</h1>
 <h3 align="center">Soy un estudiante de Desarrollo Full Stack de Argentina</h3>
 
-- 🔭 Actualmente estoy trabajando en **Roulette Indumentaria**
+- 🔭 Actualmente estoy cursando **JavaScript**
 
 - 💬 Preguntame sobre **Diseño web, deportes, etc.**
 
