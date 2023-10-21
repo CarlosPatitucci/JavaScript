@@ -26,7 +26,6 @@ const pintarCarrito = () => {
         <h3>${product.nombre}</h3>
         <p>${product.precio} $</p>
         <span class="restar"> ➖ </span>
-        <!--recomiendo no escribir la palabra cantidad para que no quede tan largo :)-->
         <p>${product.cantidad}</p>
         <span class="sumar"> ➕ </span>
         <p>Total: ${product.cantidad * product.precio} $</p>
@@ -62,10 +61,10 @@ const pintarCarrito = () => {
 
   const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
-  const totalBuying = document.createElement("div");
-  totalBuying.className = "total-content";
-  totalBuying.innerHTML = `Total a pagar: ${total} $`;
-  modalContainer.append(totalBuying);
+  const totalCompra = document.createElement("div");
+  totalCompra.className = "total-content";
+  totalCompra.innerHTML = `Total a pagar: ${total} $`;
+  modalContainer.append(totalCompra);
 };
 
 verCarrito.addEventListener("click", pintarCarrito);
