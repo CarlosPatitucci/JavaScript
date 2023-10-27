@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "nombre": "Buzo Adidas",
+        "precio": 2500,
+        "img": "./img/buzo-adidas2.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 2,
+        "nombre": "Buzo Nike",
+        "precio": 3000,
+        "img": "./img/buzo-nike2.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 3,
+        "nombre": "Buzo Puma",
+        "precio": 1500,
+        "img": "./img/buzo-puma1.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 4,
+        "nombre": "Campera Adidas",
+        "precio": 4000,
+        "img": "./img/campera-adidas1.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 5,
+        "nombre": "Campera Nike",
+        "precio": 4500,
+        "img": "./img/campera-nike1.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 6,
+        "nombre": "Buzo Puma 2",
+        "precio": 3500,
+        "img": "./img/buzo-puma2.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 7,
+        "nombre": "Remera Adidas",
+        "precio": 1500,
+        "img": "./img/remera-adidas3.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 8,
+        "nombre": "Remera Nike",
+        "precio": 2000,
+        "img": "./img/remera-nike1.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 9,
+        "nombre": "Remera Puma",
+        "precio": 1000,
+        "img": "./img/remera-puma1.jpg",
+        "cantidad": 1
+    }
+]

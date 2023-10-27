@@ -4,7 +4,7 @@ const pintarCarrito = () => {
   const modalHeader = document.createElement("div");
   modalHeader.className = "modal-header";
   modalHeader.innerHTML = `
-      <h1 class="modal-header-title">Carrito.</h1>
+      <h1 class="modal-header-title">Carrito de Compras</h1>
     `;
   modalContainer.append(modalHeader);
 
@@ -54,7 +54,22 @@ const pintarCarrito = () => {
     let eliminar = carritoContent.querySelector(".delete-product");
 
     eliminar.addEventListener("click", () => {
-      eliminarProducto(product.id);
+      Swal.fire({
+        icon: 'question',
+        title: 'Eliminar este Producto?',
+        showDenyButton: true,
+        confirmButtonText: 'Si',
+        denyButtonText: `No`,
+        confirmButtonColor: "#ff0000",
+        denyButtonColor: "#008000",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire('Producto Eliminado', '', 'success')
+                eliminarProducto(product.id);
+        } else if (result.isDenied) {
+          Swal.fire('Cancelado', '', 'info')
+        }
+      })
     });
 
   });
@@ -63,7 +78,7 @@ const pintarCarrito = () => {
 
   const totalCompra = document.createElement("div");
   totalCompra.className = "total-content";
-  totalCompra.innerHTML = `Total a pagar: ${total} $`;
+  totalCompra.innerHTML = `Total a pagar: $${total}`;
   modalContainer.append(totalCompra);
 };
 

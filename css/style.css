@@ -4,6 +4,15 @@ body {
     font-family: monospace;
 }
 
+.info-dolar {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    border: rgb(255, 255, 255) 2px solid;
+    padding: 10px;
+    margin: 10px;
+    font-weight: 900;
+    background-color: rgba(0, 0, 255, 0.623);
+}
 
 .nav-container {
     position: sticky;
@@ -75,6 +84,7 @@ h3{
     font-size: 25px;
     font-weight: 800;
 }
+
 
 .card button {
     border: none;
