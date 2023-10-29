@@ -35,7 +35,7 @@ body {
     cursor: pointer;
 }
 
-.ver-carrito {
+.mostrar-carrito {
     font-size: 50px;
     margin-right: 20px;
     margin-top: 3.5vh;
@@ -44,7 +44,7 @@ body {
 
 
 
-.shop-content {
+.contenido-tienda {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -79,7 +79,7 @@ body {
 h3{
     font-size: 25px;
 }
-.price {
+.precio {
     color: rgb(253, 253, 253);
     font-size: 25px;
     font-weight: 800;
@@ -104,7 +104,7 @@ h3{
     opacity: 0.7;
 }
 
-.modal-container {
+.contenido-compra {
     width: 80%;
     margin: 0 10%;
     max-height: 88vh;
@@ -121,11 +121,11 @@ h3{
     scrollbar-color: none;
 }
 
-.modal-container::-webkit-scrollbar {
+.contenido-compra::-webkit-scrollbar {
     display: none;
 }
 
-.modal-header {
+.compra-header {
     display: flex;
     justify-content: space-around;
     background-color: #000000;
@@ -133,15 +133,15 @@ h3{
     width: 100%;
 }
 
-.modal-header-title {
+.compra-header-title {
     justify-self: start;
 }
 
-.modal-header-button {
+.compra-header-button {
     cursor: pointer;
 }
 
-.modal-container>.modal-content {
+.contenido-compra>.compra-content {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -151,7 +151,7 @@ h3{
     font-size: 25px;
 }
 
-.modal-container>div>img {
+.contenido-compra>div>img {
     height: 120px;
     width: 120px;
 }
@@ -166,32 +166,12 @@ h3{
     color: black;
 }
 
-
-@media only screen and (max-width: 750px) {
-    .modal-container {
-        width: 100%;
-        margin: 0;
-        min-height: 88vh;
-    }
-
-    .modal-container>.modal-content {
-        justify-content: space-between;
-        width: 100%;
-        margin: 2px;
-    }
-
-    .modal-container>div>img {
-        height: 80px;
-        width: 80px;
-    }
-}
-
 .delete-product {
     cursor: pointer;
 }
 
 
-.cantidad-carrito {
+.contar-carrito {
     background-color: red;
     color: white;
     border-radius: 50%;
@@ -212,3 +192,25 @@ h3{
     cursor: pointer;
     font-size: 30px;
 }
+
+
+
+@media only screen and (max-width: 750px) {
+    .contenido-compra {
+        width: 100%;
+        margin: 0;
+        min-height: 88vh;
+    }
+
+    .contenido-compra>.compra-content {
+        justify-content: space-between;
+        width: 100%;
+        margin: 2px;
+    }
+
+    .contenido-compra>div>img {
+        height: 80px;
+        width: 80px;
+    }
+}
+

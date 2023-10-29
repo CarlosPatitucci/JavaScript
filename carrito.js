@@ -1,26 +1,26 @@
-const pintarCarrito = () => {
-  modalContainer.innerHTML = "";
-  modalContainer.style.display = "flex";
-  const modalHeader = document.createElement("div");
-  modalHeader.className = "modal-header";
-  modalHeader.innerHTML = `
-      <h1 class="modal-header-title">Carrito de Compras</h1>
+const dibujarCarrito = () => {
+  contenidoCompra.innerHTML = "";
+  contenidoCompra.style.display = "flex";
+  const compraHeader = document.createElement("div");
+  compraHeader.className = "compra-header";
+  compraHeader.innerHTML = `
+      <h1 class="compra-header-title">Carrito de Compras</h1>
     `;
-  modalContainer.append(modalHeader);
+  contenidoCompra.append(compraHeader);
 
-  const modalbutton = document.createElement("h1");
-  modalbutton.innerText = "x";
-  modalbutton.className = "modal-header-button";
+  const comprabutton = document.createElement("h1");
+  comprabutton.innerText = "x";
+  comprabutton.className = "compra-header-button";
 
-  modalbutton.addEventListener("click", () => {
-    modalContainer.style.display = "none";
+  comprabutton.addEventListener("click", () => {
+    contenidoCompra.style.display = "none";
   });
 
-  modalHeader.append(modalbutton);
+  compraHeader.append(comprabutton);
 
   carrito.forEach((product) => {
     let carritoContent = document.createElement("div");
-    carritoContent.className = "modal-content";
+    carritoContent.className = "compra-content";
     carritoContent.innerHTML = `
         <img src="${product.img}">
         <h3>${product.nombre}</h3>
@@ -32,7 +32,7 @@ const pintarCarrito = () => {
         <span class="delete-product"> ❌ </span>
       `;
 
-    modalContainer.append(carritoContent);
+    contenidoCompra.append(carritoContent);
 
     let restar = carritoContent.querySelector(".restar");
 
@@ -40,15 +40,15 @@ const pintarCarrito = () => {
       if (product.cantidad !== 1) {
         product.cantidad--;
       }
-      saveLocal();
-      pintarCarrito();
+      guardarLocal();
+      dibujarCarrito();
     });
 
     let sumar = carritoContent.querySelector(".sumar");
     sumar.addEventListener("click", () => {
       product.cantidad++;
-      saveLocal();
-      pintarCarrito();
+      guardarLocal();
+      dibujarCarrito();
     });
 
     let eliminar = carritoContent.querySelector(".delete-product");
@@ -79,10 +79,10 @@ const pintarCarrito = () => {
   const totalCompra = document.createElement("div");
   totalCompra.className = "total-content";
   totalCompra.innerHTML = `Total a pagar: $${total}`;
-  modalContainer.append(totalCompra);
+  contenidoCompra.append(totalCompra);
 };
 
-verCarrito.addEventListener("click", pintarCarrito);
+mostrarCarrito.addEventListener("click", dibujarCarrito);
 
 const eliminarProducto = (id) => {
   const foundId = carrito.find((element) => element.id === id);
@@ -93,19 +93,19 @@ const eliminarProducto = (id) => {
     return carritoId !== foundId;
   });
 
-  carritoCounter();
-  saveLocal();
-  pintarCarrito();
+  conteoCarrito();
+  guardarLocal();
+  dibujarCarrito();
 };
 
-const carritoCounter = () => {
-  cantidadCarrito.style.display = "block";
+const conteoCarrito = () => {
+  contarCarrito.style.display = "block";
 
   const carritoLength = carrito.length;
 
   localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
 
-  cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
+  contarCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
 };
 
-carritoCounter();
+conteoCarrito();

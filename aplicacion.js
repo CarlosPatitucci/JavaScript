@@ -1,8 +1,8 @@
-const shopContent = document.getElementById("shopContent");
-const verCarrito = document.getElementById("verCarrito");
-const modalContainer = document.getElementById("modal-container");
-const showAlert = document.getElementById("showAlert");
-const cantidadCarrito = document.getElementById("cantidadCarrito");
+const contenidoTienda = document.getElementById("contenidoTienda");
+const mostrarCarrito = document.getElementById("mostrarCarrito");
+const contenidoCompra = document.getElementById("contenidoCompra");
+const mostrarAlerta = document.getElementById("mostrarAlerta");
+const contarCarrito = document.getElementById("contarCarrito");
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -11,21 +11,21 @@ const llamarProductos = async () => {
     const data = await response.json();
 
     data.forEach((product) => {
-        let content = document.createElement("div");
-        content.className = "card";
-        content.innerHTML = `
+        let contenido = document.createElement("div");
+        contenido.className = "card";
+        contenido.innerHTML = `
         <img src="${product.img}">
         <h3>${product.nombre}</h3>
-        <p class="price">${product.precio} $</p>
+        <p class="precio">${product.precio} $</p>
     `;
     
-        shopContent.append(content);
+        contenidoTienda.append(contenido);
     
         let comprar = document.createElement("button");
         comprar.innerText = "Agregar al Carrito";
         comprar.className = "comprar";
     
-        content.append(comprar);
+        contenido.append(comprar);
     
         comprar.addEventListener("click", () => {
             const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
@@ -46,8 +46,8 @@ const llamarProductos = async () => {
                 });
                 console.log(carrito);
                 console.log(carrito.length);
-                carritoCounter();
-                saveLocal();
+                conteoCarrito();
+                guardarLocal();
             }
             Toastify({
 
@@ -69,7 +69,7 @@ const llamarProductos = async () => {
 llamarProductos();
 
 
-const saveLocal = () => {
+const guardarLocal = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
