@@ -2,21 +2,21 @@ const dibujarCarrito = () => {
   contenidoCompra.innerHTML = "";
   contenidoCompra.style.display = "flex";
   const compraHeader = document.createElement("div");
-  compraHeader.className = "compra-header";
+  compraHeader.className = "compra-encabezado";
   compraHeader.innerHTML = `
-      <h1 class="compra-header-title">Carrito de Compras</h1>
+      <h1 class="compra-titulo">Carrito de Compras</h1>
     `;
   contenidoCompra.append(compraHeader);
 
-  const comprabutton = document.createElement("h1");
-  comprabutton.innerText = "x";
-  comprabutton.className = "compra-header-button";
+  const compraBoton = document.createElement("h1");
+  compraBoton.innerText = "x";
+  compraBoton.className = "compra-button";
 
-  comprabutton.addEventListener("click", () => {
+  compraBoton.addEventListener("click", () => {
     contenidoCompra.style.display = "none";
   });
 
-  compraHeader.append(comprabutton);
+  compraHeader.append(compraBoton);
 
   carrito.forEach((product) => {
     let carritoContent = document.createElement("div");
@@ -77,7 +77,7 @@ const dibujarCarrito = () => {
   const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
   const totalCompra = document.createElement("div");
-  totalCompra.className = "total-content";
+  totalCompra.className = "total";
   totalCompra.innerHTML = `Total a pagar: $${total}`;
   contenidoCompra.append(totalCompra);
 };
